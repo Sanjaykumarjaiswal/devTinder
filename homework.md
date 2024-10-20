@@ -9,4 +9,6 @@ install nodemon and update scripts inside package .json
 what are dependencies
 what is the use of -g while npm install
 differences between carete and tilda(^ and ~)
+play with route extensions ex: /hello, /hello/2,/xyz
+order of routes is very important
 
