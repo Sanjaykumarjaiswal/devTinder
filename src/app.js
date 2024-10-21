@@ -2,22 +2,19 @@ const express=require("express")
 
 const app=express();
 
-
-
-app.use("/test",(req,res)=>{
-    res.send("I am /test route");
+app.get("/user",(req,res)=>{
+    res.json({
+        message:"hello  I am in GET /user Route"
+    })
 })
 
-app.use("/hello",(req,res)=>{
-    res.send("I am /hello route");
+app.post("/user",(req,res)=>{
+    res.send("I am POST /user route")
+
+})
+app.delete("/user",(req,res)=>{
+    res.send("I am DELETE /user Route")
 })
 
-app.use("/",(req,res)=>{
-    res.send(" I am / route")
-})
-
-app.use("/me",(req,res)=>{
-    res.send("i am /me route");
-})
 
  app.listen(3000)
