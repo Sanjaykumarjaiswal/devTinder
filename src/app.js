@@ -2,11 +2,16 @@ const express=require("express")
 
 const app=express();
 
-app.get("/user",(req,res)=>{
+app.get("/user",(req,res,next)=>{
     // console.log(req);
     console.log(req.query)
     res.send("I am in GET /user")
-})
+    next()
+},
+(req,res)=>{
+    res.send("2nd response")
+}
+)
 
 app.post("/user",(req,res)=>{
     
