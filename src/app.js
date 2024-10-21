@@ -1,26 +1,18 @@
 const express=require("express")
-
+const { adminAuth,userAuth }=require("../middleware/auth");
 const app=express();
+app.use("/admin",adminAuth)
 
-app.get("/user",(req,res,next)=>{
-    // console.log(req);
-    console.log(req.query)
-    res.send("I am in GET /user")
-    next()
-},
-(req,res)=>{
-    res.send("2nd response")
-}
-)
+// app.use("/user",userAuth)
+// since we are having only one user route we can use it as used below directly
 
-app.post("/user",(req,res)=>{
-    
-    res.send("I am POST /user route")
-
-})
-app.delete("/user",(req,res)=>{
-    res.send("I am DELETE /user Route")
+app.get("/user",userAuth,(req,res)=>{
+    res.send("hello")
 })
  
+
+app.get("/user/getAllData",(req,res)=>{
+    res.send("all data sent")
+})
 
  app.listen(3000)
