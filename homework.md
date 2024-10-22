@@ -30,3 +30,5 @@
 -how express js basically handles request behind the
 -write a dummy auth fro admin
 -write a dummy auth middleware for all user routes,except /user/login
+
+-error handling 
